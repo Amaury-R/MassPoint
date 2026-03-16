@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MassPoint</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+
+</head>
+
+<body>
+
+<header>
+<div>MassPoint</div>
+<div id="date"></div>
+</header>
+
+
+<!-- SCREEN 1 -->
+<div id="screen-home" class="screen active">
+
+<button class="big-button" onclick="openSelection()">NOUVEAU POINTAGE</button>
+
+<button class="big-button disabled">HISTORIQUE</button>
+
+<button class="big-button disabled">BASE DE DONNÉES</button>
+
+</div>
+
+
+
+<!-- SCREEN 2 -->
+<div id="screen-selection" class="screen">
+
+<div class="grid">
+
+<div class="tile active" onclick="openMasses()">MASSES</div>
+<div class="tile disabled">DEPOTES</div>
+<div class="tile disabled">FL</div>
+
+<div class="tile disabled">ACTION</div>
+<div class="tile disabled">VV</div>
+<div class="tile disabled">FRAIS</div>
+
+<div class="tile disabled">DETAILS</div>
+<div class="tile disabled">FLEURS</div>
+
+</div>
+
+</div>
+
+<!-- SCREEN 3 : FAMILLES -->
+
+<div id="screen-familles" class="screen">
+
+<div class="topbar">
+<button onclick="retourMasses()">← MASSES</button>
+<span>FAMILLES</span>
+</div>
+
+<div class="grid">
+
+<div class="tile active" onclick="openFamille('eau')">EAU</div>
+<div class="tile active" onclick="openFamille('jus')">JUS</div>
+<div class="tile disabled">SODA</div>
+
+<div class="tile disabled">HUILE</div>
+<div class="tile disabled">DPH</div>
+<div class="tile disabled">PQ</div>
+
+<div class="tile disabled">LAIT</div>
+<div class="tile disabled">OEUF / SUCRE / FARINE</div>
+<div class="tile disabled">BIERE</div>
+
+</div>
+
+</div>
+
+
+
+<!-- SCREEN 4 -->
+<div id="screen-produits" class="screen">
+
+<div class="topbar">
+<button onclick="retourSelection()">← MASSES</button>
+<span>EAU</span>
+</div>
+
+<div id="liste-produits" class="grid-produits"></div>
+
+</div>
+
+<div class="pointage">
+
+<div class="pointage-title">
+
+<span>POINTAGE</span>
+
+<span id="date-pointage"></span>
+
+</div>
+
+<div id="liste-pointage"></div>
+
+<div class="total">
+TOTAL PALETTES : <span id="total">0</span>
+</div>
+
+<button class="finish" onclick="terminerPointage()">
+POINTAGE TERMINÉ
+</button>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="app.js"></script>
+
+<div id="screen-resultat" class="screen">
+
+<div class="resultat-container">
+
+<h2>Pointage terminé</h2>
+
+<img id="image-resultat">
+
+<button onclick="retourMenu()" class="finish">
+Retour menu
+</button>
+
+</div>
+
+</div>
+
+</body>
+</html>
