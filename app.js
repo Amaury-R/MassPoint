@@ -61,13 +61,11 @@ card.className = "tuile-produit"
 card.innerHTML = `
 
 <div class="nom">${p.nom}</div>
+<div class="code">${p.code}</div>
 
 <div class="compteur">
-
 <button class="moins">-</button>
-
 <div class="count">${p.count}</div>
-
 </div>
 
 `
@@ -171,6 +169,14 @@ document.getElementById("screen-selection").classList.add("active")
 
 }
 
+function togglePointage(){
+
+const panel = document.querySelector(".pointage")
+
+panel.classList.toggle("open")
+
+}
+
 // terminer pointage
 
 function terminerPointage(){
@@ -183,8 +189,10 @@ const image = canvas.toDataURL("image/png")
 
 document.getElementById("image-resultat").src = image
 
-// afficher écran résultat
+// cacher le panneau pointage
+document.querySelector(".pointage").style.display = "none"
 
+// afficher écran résultat
 document.querySelectorAll(".screen").forEach(s=>{
 s.classList.remove("active")
 })

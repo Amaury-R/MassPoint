@@ -66,15 +66,15 @@
 
 <div class="tile active" onclick="openFamille('eau')">EAU</div>
 <div class="tile active" onclick="openFamille('jus')">JUS</div>
-<div class="tile disabled">SODA</div>
+<div class="tile active" onclick="openFamille('soda')">SODA</div>
 
-<div class="tile disabled">HUILE</div>
-<div class="tile disabled">DPH</div>
-<div class="tile disabled">PQ</div>
+<div class="tile active" onclick="openFamille('oeufs')">OEUFS</div>
+<div class="tile active" onclick="openFamille('dph')">DPH</div>
+<div class="tile active" onclick="openFamille('pq')">PQ</div>
 
-<div class="tile disabled">LAIT</div>
-<div class="tile disabled">OEUF / SUCRE / FARINE</div>
-<div class="tile disabled">BIERE</div>
+<div class="tile active" onclick="openFamille('lait')">LAIT</div>
+<div class="tile active" onclick="openFamille('huile / sucre / farine')">HUILE / SUCRE / FARINE</div>
+<div class="tile active" onclick="openFamille('biere')">BIERE</div>
 
 </div>
 
@@ -96,7 +96,9 @@
 
 <div class="pointage">
 
-<div class="pointage-title">
+<div class="pointage-title" onclick="togglePointage()">
+Pointage en cours
+</div>
 
 <span>POINTAGE</span>
 

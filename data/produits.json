@@ -58,5 +58,180 @@
     "code": "4047",
     "nom": "Nectar Orange",
     "famille": "jus"
+  },
+  {
+    "code": "188742",
+    "nom": "Ice Tea Lipton",
+    "famille": "soda"
+  },
+  {
+    "code": "70",
+    "nom": "Ice Tea Lidl",
+    "famille": "soda"
+  },
+  {
+    "code": "5610878",
+    "nom": "Oasis Tropical",
+    "famille": "soda"
+  },
+  {
+    "code": "5610879",
+    "nom": "Orangina",
+    "famille": "soda"
+  },
+  {
+    "code": "5615774",
+    "nom": "Fanta",
+    "famille": "soda"
+  },
+  {
+    "code": "47",
+    "nom": "Coca Zero Lidl",
+    "famille": "soda"
+  },
+  {
+    "code": "193694",
+    "nom": "Coca Cola std 1.5L",
+    "famille": "soda"
+  },
+  {
+    "code": "4039",
+    "nom": "Jus Multifruit",
+    "famille": "jus"
+  },
+  {
+    "code": "4064",
+    "nom": "Nectar Multifruit",
+    "famille": "jus"
+  },
+  {
+    "code": "601",
+    "nom": "Lait 1/2 brk",
+    "famille": "lait"
+  },
+  {
+    "code": "609",
+    "nom": "Lait écréme brk",
+    "famille": "lait"
+  },
+  {
+    "code": "74554",
+    "nom": "Lait bio",
+    "famille": "lait"
+  },
+  {
+    "code": "116329",
+    "nom": "Lait 1/2 50cL",
+    "famille": "lait"
+  },
+  {
+    "code": "600",
+    "nom": "Lait entier brk",
+    "famille": "lait"
+  },
+  {
+    "code": "5618233",
+    "nom": "Lait 1/2 bouteille",
+    "famille": "lait"
+  },
+  {
+    "code": "5619361",
+    "nom": "Lait 1/2 ss bouchon",
+    "famille": "lait"
+  },
+  {
+    "code": "1004",
+    "nom": "Sucre morceaux",
+    "famille": "huile / sucre / farine"
+  },
+  {
+    "code": "112954",
+    "nom": "Farine bleu",
+    "famille": "huile / sucre / farine"
+  },
+  {
+    "code": "5608403",
+    "nom": "Farine rouge",
+    "famille": "huile / sucre / farine"
+  },
+  {
+    "code": "5622541",
+    "nom": "Oeuf x20 sol",
+    "famille": "oeufs"
+  },
+  {
+    "code": "5607715",
+    "nom": "Oeuf x12 air",
+    "famille": "oeufs"
+  },
+  {
+    "code": "5615177",
+    "nom": "Oeuf x12 sol",
+    "famille": "oeufs"
+  },
+  {
+    "code": "10953",
+    "nom": "Huile 3L",
+    "famille": "huile / sucre / farine"
+  },
+  {
+    "code": "1102",
+    "nom": "Huile 1L",
+    "famille": "huile / sucre / farine"
+  },
+  {
+    "code": "179249",
+    "nom": "PQ rose x12",
+    "famille": "pq"
+  },
+  {
+    "code": "142070",
+    "nom": "PQ ultra confort",
+    "famille": "pq"
+  },
+  {
+    "code": "179250",
+    "nom": "PQ x24 ultra doux",
+    "famille": "pq"
+  },
+  {
+    "code": "178278",
+    "nom": "PQ ultra moelleux",
+    "famille": "pq"
+  },
+  {
+    "code": "178434",
+    "nom": "Essuie-tout x24",
+    "famille": "pq"
+  },
+  {
+    "code": "156277",
+    "nom": "Essuie-tout x6",
+    "famille": "pq"
+  },
+  {
+    "code": "217708",
+    "nom": "Lessive savon Marseille",
+    "famille": "dph"
+  },
+  {
+    "code": "178235",
+    "nom": "Croquette",
+    "famille": "dph"
+  },
+  {
+    "code": "5713946",
+    "nom": "Litiere boite",
+    "famille": "dph"
+  },
+  {
+    "code": "156069",
+    "nom": "Litiere sac",
+    "famille": "dph"
+  },
+  {
+    "code": "5609614",
+    "nom": "Heineken",
+    "famille": "biere"
   }
 ]
