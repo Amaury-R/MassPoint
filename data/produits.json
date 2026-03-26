@@ -1,237 +1,94 @@
 [
-  {
-    "code": "155980",
-    "nom": "Cristaline",
-    "famille": "eau"
-  },
-  {
-    "code": "8813",
-    "nom": "Badoit",
-    "famille": "eau"
-  },
-  {
-    "code": "5000",
-    "nom": "Volvic",
-    "famille": "eau"
-  },
-  {
-    "code": "5611811",
-    "nom": "Eau Saguaro 1L",
-    "famille": "eau"
-  },
-  {
-    "code": "2",
-    "nom": "Eau Saguaro 1L5",
-    "famille": "eau"
-  },
-  {
-    "code": "108636",
-    "nom": "Eau Saguaro Montagne",
-    "famille": "eau"
-  },
-  {
-    "code": "5620508",
-    "nom": "Eau Magnésienne",
-    "famille": "eau"
-  },
-  {
-    "code": "5608279",
-    "nom": "Evian",
-    "famille": "eau"
-  },
-  {
-    "code": "877",
-    "nom": "Eau Pétillante Lidl",
-    "famille": "eau"
-  },
-  {
-    "code": "109175",
-    "nom": "Eau aromatisé Lidl",
-    "famille": "eau"
-  },
-  {
-    "code": "130200",
-    "nom": "Eau Pétillante Aromatisé",
-    "famille": "eau"
-  },
-  {
-    "code": "4047",
-    "nom": "Nectar Orange",
-    "famille": "jus"
-  },
-  {
-    "code": "188742",
-    "nom": "Ice Tea Lipton",
-    "famille": "soda"
-  },
-  {
-    "code": "70",
-    "nom": "Ice Tea Lidl",
-    "famille": "soda"
-  },
-  {
-    "code": "5610878",
-    "nom": "Oasis Tropical",
-    "famille": "soda"
-  },
-  {
-    "code": "5610879",
-    "nom": "Orangina",
-    "famille": "soda"
-  },
-  {
-    "code": "5615774",
-    "nom": "Fanta",
-    "famille": "soda"
-  },
-  {
-    "code": "47",
-    "nom": "Coca Zero Lidl",
-    "famille": "soda"
-  },
-  {
-    "code": "193694",
-    "nom": "Coca Cola std 1.5L",
-    "famille": "soda"
-  },
-  {
-    "code": "4039",
-    "nom": "Jus Multifruit",
-    "famille": "jus"
-  },
-  {
-    "code": "4064",
-    "nom": "Nectar Multifruit",
-    "famille": "jus"
-  },
-  {
-    "code": "601",
-    "nom": "Lait 1/2 brk",
-    "famille": "lait"
-  },
-  {
-    "code": "609",
-    "nom": "Lait écréme brk",
-    "famille": "lait"
-  },
-  {
-    "code": "74554",
-    "nom": "Lait bio",
-    "famille": "lait"
-  },
-  {
-    "code": "116329",
-    "nom": "Lait 1/2 50cL",
-    "famille": "lait"
-  },
-  {
-    "code": "600",
-    "nom": "Lait entier brk",
-    "famille": "lait"
-  },
-  {
-    "code": "5618233",
-    "nom": "Lait 1/2 bouteille",
-    "famille": "lait"
-  },
-  {
-    "code": "5619361",
-    "nom": "Lait 1/2 ss bouchon",
-    "famille": "lait"
-  },
-  {
-    "code": "1004",
-    "nom": "Sucre morceaux",
-    "famille": "huile / sucre / farine"
-  },
-  {
-    "code": "112954",
-    "nom": "Farine bleu",
-    "famille": "huile / sucre / farine"
-  },
-  {
-    "code": "5608403",
-    "nom": "Farine rouge",
-    "famille": "huile / sucre / farine"
-  },
-  {
-    "code": "5622541",
-    "nom": "Oeuf x20 sol",
-    "famille": "oeufs"
-  },
-  {
-    "code": "5607715",
-    "nom": "Oeuf x12 air",
-    "famille": "oeufs"
-  },
-  {
-    "code": "5615177",
-    "nom": "Oeuf x12 sol",
-    "famille": "oeufs"
-  },
-  {
-    "code": "10953",
-    "nom": "Huile 3L",
-    "famille": "huile / sucre / farine"
-  },
-  {
-    "code": "1102",
-    "nom": "Huile 1L",
-    "famille": "huile / sucre / farine"
-  },
-  {
-    "code": "179249",
-    "nom": "PQ rose x12",
-    "famille": "pq"
-  },
-  {
-    "code": "142070",
-    "nom": "PQ ultra confort",
-    "famille": "pq"
-  },
-  {
-    "code": "179250",
-    "nom": "PQ x24 ultra doux",
-    "famille": "pq"
-  },
-  {
-    "code": "178278",
-    "nom": "PQ ultra moelleux",
-    "famille": "pq"
-  },
-  {
-    "code": "178434",
-    "nom": "Essuie-tout x24",
-    "famille": "pq"
-  },
-  {
-    "code": "156277",
-    "nom": "Essuie-tout x6",
-    "famille": "pq"
-  },
-  {
-    "code": "217708",
-    "nom": "Lessive savon Marseille",
-    "famille": "dph"
-  },
-  {
-    "code": "178235",
-    "nom": "Croquette",
-    "famille": "dph"
-  },
-  {
-    "code": "5713946",
-    "nom": "Litiere boite",
-    "famille": "dph"
-  },
-  {
-    "code": "156069",
-    "nom": "Litiere sac",
-    "famille": "dph"
-  },
-  {
-    "code": "5609614",
-    "nom": "Heineken",
-    "famille": "biere"
-  }
+  { "code": "155980", "nom": "Cristaline", "famille": "eau", "type": "masses" },
+  { "code": "8813", "nom": "Badoit", "famille": "eau", "type": "masses" },
+  { "code": "5000", "nom": "Volvic", "famille": "eau", "type": "masses" },
+  { "code": "5611811", "nom": "Eau Saguaro 1L", "famille": "eau", "type": "masses" },
+  { "code": "2", "nom": "Eau Saguaro 1L5", "famille": "eau", "type": "masses" },
+  { "code": "108636", "nom": "Eau Saguaro Montagne", "famille": "eau", "type": "masses" },
+  { "code": "5620508", "nom": "Eau Magnésienne", "famille": "eau", "type": "masses" },
+  { "code": "5608279", "nom": "Evian", "famille": "eau", "type": "masses" },
+  { "code": "877", "nom": "Eau Pétillante Lidl", "famille": "eau", "type": "masses" },
+  { "code": "109175", "nom": "Eau aromatisé Lidl", "famille": "eau", "type": "masses" },
+  { "code": "130200", "nom": "Eau Pétillante Aromatisé", "famille": "eau", "type": "masses" },
+
+  { "code": "4047", "nom": "Nectar Orange", "famille": "jus", "type": "masses" },
+  { "code": "4039", "nom": "Jus Multifruit", "famille": "jus", "type": "masses" },
+  { "code": "4064", "nom": "Nectar Multifruit", "famille": "jus", "type": "masses" },
+
+  { "code": "188742", "nom": "Ice Tea Lipton", "famille": "soda", "type": "masses" },
+  { "code": "70", "nom": "Ice Tea Lidl", "famille": "soda", "type": "masses" },
+  { "code": "5610878", "nom": "Oasis Tropical", "famille": "soda", "type": "masses" },
+  { "code": "5610879", "nom": "Orangina", "famille": "soda", "type": "masses" },
+  { "code": "5615774", "nom": "Fanta", "famille": "soda", "type": "masses" },
+  { "code": "47", "nom": "Coca Zero Lidl", "famille": "soda", "type": "masses" },
+  { "code": "193694", "nom": "Coca Cola std 1.5L", "famille": "soda", "type": "masses" },
+
+  { "code": "601", "nom": "Lait 1/2 brk", "famille": "lait", "type": "masses" },
+  { "code": "609", "nom": "Lait écréme brk", "famille": "lait", "type": "masses" },
+  { "code": "74554", "nom": "Lait bio", "famille": "lait", "type": "masses" },
+  { "code": "116329", "nom": "Lait 1/2 50cL", "famille": "lait", "type": "masses" },
+  { "code": "600", "nom": "Lait entier brk", "famille": "lait", "type": "masses" },
+  { "code": "5618233", "nom": "Lait 1/2 bouteille", "famille": "lait", "type": "masses" },
+  { "code": "5619361", "nom": "Lait 1/2 ss bouchon", "famille": "lait", "type": "masses" },
+
+  { "code": "1004", "nom": "Sucre morceaux", "famille": "huile / sucre / farine", "type": "masses" },
+  { "code": "112954", "nom": "Farine bleu", "famille": "huile / sucre / farine", "type": "masses" },
+  { "code": "5608403", "nom": "Farine rouge", "famille": "huile / sucre / farine", "type": "masses" },
+  { "code": "10953", "nom": "Huile 3L", "famille": "huile / sucre / farine", "type": "masses" },
+  { "code": "1102", "nom": "Huile 1L", "famille": "huile / sucre / farine", "type": "masses" },
+
+  { "code": "5622541", "nom": "Oeuf x20 sol", "famille": "oeufs", "type": "masses" },
+  { "code": "5607715", "nom": "Oeuf x12 air", "famille": "oeufs", "type": "masses" },
+  { "code": "5615177", "nom": "Oeuf x12 sol", "famille": "oeufs", "type": "masses" },
+
+  { "code": "179249", "nom": "PQ rose x12", "famille": "pq", "type": "masses" },
+  { "code": "142070", "nom": "PQ ultra confort", "famille": "pq", "type": "masses" },
+  { "code": "179250", "nom": "PQ x24 ultra doux", "famille": "pq", "type": "masses" },
+  { "code": "178278", "nom": "PQ ultra moelleux", "famille": "pq", "type": "masses" },
+  { "code": "178434", "nom": "Essuie-tout x24", "famille": "pq", "type": "masses" },
+  { "code": "156277", "nom": "Essuie-tout x6", "famille": "pq", "type": "masses" },
+
+  { "code": "217708", "nom": "Lessive savon Marseille", "famille": "dph", "type": "masses" },
+  { "code": "178235", "nom": "Croquette", "famille": "dph", "type": "masses" },
+  { "code": "5713946", "nom": "Litiere boite", "famille": "dph", "type": "masses" },
+  { "code": "156069", "nom": "Litiere sac", "famille": "dph", "type": "masses" },
+
+  { "code": "5609614", "nom": "Heineken", "famille": "biere", "type": "masses" },
+
+  { "code": "Frais", "nom": "EUR", "famille": "palette", "type": "frais" },
+  { "code": "Frais", "nom": "DD", "famille": "palette", "type": "frais" },
+
+  { "code": "Detail", "nom": "EUR", "famille": "palette", "type": "detail" },
+  { "code": "Detail", "nom": "DD", "famille": "palette", "type": "detail" },
+
+  { "code": "Action", "nom": "EUR", "famille": "palette", "type": "action" },
+  { "code": "Action", "nom": "DD", "famille": "palette", "type": "action" },
+  { "code": "Action", "nom": "box", "famille": "palette", "type": "action" },
+
+  { "code": "FL", "nom": "EUR", "famille": "palette", "type": "fl" },
+  { "code": "FL", "nom": "DD", "famille": "palette", "type": "fl" },
+  { "code": "Fleurs", "nom": "EUR", "famille": "palette", "type": "fl" },
+  { "code": "Fleurs", "nom": "DD", "famille": "palette", "type": "fl" },
+  { "code": "Fleurs", "nom": "Rolls", "famille": "palette", "type": "fl" },
+
+  { "code": "TKT", "nom": "VV", "famille": "VV", "type": "vv", "isTKT": true },
+  { "code": "EUR", "nom": "VV", "famille": "VV", "type": "vv" },
+  { "code": "DD", "nom": "VV", "famille": "VV", "type": "vv" },
+
+  { "code": "2227", "nom": "PdM Complet GT", "famille": "depotes", "type": "depotes" },
+  { "code": "2221", "nom": "PdM Nature GT", "famille": "depotes", "type": "depotes" },
+  { "code": "2205", "nom": "PdM Nature Std", "famille": "depotes", "type": "depotes" },
+  { "code": "", "nom": "PdM Nature SC", "famille": "depotes", "type": "depotes" },
+  { "code": "", "nom": "PdM Complet Std", "famille": "depotes", "type": "depotes" },
+  { "code": "", "nom": "PdM Cereale GT", "famille": "depotes", "type": "depotes" },
+  { "code": "", "nom": "Pains Précuit", "famille": "depotes", "type": "depotes" },
+  { "code": "", "nom": "Pains burger Std", "famille": "depotes", "type": "depotes" },
+  { "code": "", "nom": "Pains burger brioché", "famille": "depotes", "type": "depotes" },
+  { "code": "", "nom": "Pitch chocolat", "famille": "depotes", "type": "depotes" },
+  { "code": "", "nom": "Pains au chocolat", "famille": "depotes", "type": "depotes" },
+  { "code": "", "nom": "Pains au lait", "famille": "depotes", "type": "depotes" },
+  { "code": "", "nom": "Biscottes", "famille": "depotes", "type": "depotes" },
+  { "code": "", "nom": "Brioche tranchée", "famille": "depotes", "type": "depotes" },
+  { "code": "", "nom": "", "famille": "depotes", "type": "depotes" }
+
 ]
