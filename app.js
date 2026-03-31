@@ -1,7 +1,6 @@
 // Data
 let produits = []
 let familleActive = ""
-let tktlist = []
 let lastScreen = ""
 
 // date du jour
@@ -19,15 +18,13 @@ document.getElementById("screen-selection").classList.add("active")
 }
 
 function openMasses(){
-
 lastScreen = "familles"
-
 document.getElementById("screen-selection").classList.remove("active")
 document.getElementById("screen-familles").classList.add("active")
 }
 
 
-// affichage PRODUITS PAR FAMILLE (MASSES)
+// MASSES
 
 function afficherProduits(){
 
@@ -61,7 +58,6 @@ const boutonMoins = card.querySelector(".moins")
 
 boutonMoins.onclick = (e)=>{
 e.stopPropagation()
-
 if(p.count > 0){
 p.count--
 afficherProduits()
@@ -76,7 +72,7 @@ container.appendChild(card)
 }
 
 
-// mise à jour pointage
+// POINTAGE
 
 function majPointage(){
 
@@ -89,11 +85,15 @@ produits.forEach(p=>{
 
 if(p.count > 0){
 
+let valeurAffichee = p.count
+
 if(p.isTKT && p.tktList){
-total += p.tktList.length
-}else{
-total += p.count || 0
+valeurAffichee = p.tktList.length
+}else if(p.isCustom && p.customList){
+valeurAffichee = p.customList.length
 }
+
+total += valeurAffichee
 
 const ligne = document.createElement("div")
 ligne.className = "ligne-ticket"
@@ -103,8 +103,9 @@ ligne.innerHTML = `
 <span class="ticket-nom">
 ${p.nom}
 ${p.isTKT && p.tktList ? "<br>" + p.tktList.join(", ") : ""}
+${p.isCustom && p.customList ? "<br>" + p.customList.join("<br>") : ""}
 </span>
-<span class="ticket-count">${p.count}</span>
+<span class="ticket-count">${valeurAffichee}</span>
 `
 
 liste.appendChild(ligne)
@@ -118,12 +119,11 @@ document.getElementById("total").innerText = total
 }
 
 
-// navigation familles (MASSES)
+// FAMILLES
 
 function openFamille(famille){
 
 familleActive = famille
-
 lastScreen = "familles"
 
 document.getElementById("type-actif").innerText = famille.toUpperCase()
@@ -136,19 +136,27 @@ afficherProduits()
 }
 
 
-// affichage par TYPE (frais / detail / fl / action)
+// TYPES
 
 function afficherType(type){
 
 const container = document.getElementById("liste-produits")
 container.innerHTML = ""
 
-const produitsType = produits.filter(p => p.type && p.type === type)
+const produitsType = produits.filter(p => p.type === type)
 
 produitsType.forEach(p=>{
 
 const card = document.createElement("div")
 card.className = "tuile-produit"
+
+let valeurAffichee = p.count
+
+if(p.isTKT && p.tktList){
+valeurAffichee = p.tktList.length
+}else if(p.isCustom && p.customList){
+valeurAffichee = p.customList.length
+}
 
 card.innerHTML = `
 <div class="nom">${p.nom}</div>
@@ -156,14 +164,35 @@ card.innerHTML = `
 
 <div class="compteur">
 <button class="moins">-</button>
-<div class="count">${p.count}</div>
+<div class="count">${valeurAffichee}</div>
 </div>
 `
 
 card.onclick = ()=>{
 
-// cas spécial TKT
-if(p.isTKT){
+// BOX CUSTOM
+if(p.isCustom){
+
+let valeur = prompt("Qu'est-ce qui a été reçu ?")
+
+if(valeur){
+
+valeur = valeur.trim()
+
+if(!p.customList){
+p.customList = []
+}
+
+if(!p.customList.includes(valeur)){
+p.customList.push(valeur)
+}
+
+p.count = p.customList.length
+
+}
+
+// TKT
+}else if(p.isTKT){
 
 let numero = prompt("Numéro du TKT ?")
 
@@ -171,25 +200,21 @@ if(numero){
 
 numero = numero.trim()
 
-// initialiser si besoin
 if(!p.tktList){
 p.tktList = []
 }
 
-// éviter doublons
 if(!p.tktList.includes(numero)){
 p.tktList.push(numero)
 }
 
-// MAJ compteur
 p.count = p.tktList.length
 
 }
 
+// NORMAL
 }else{
-
 p.count++
-
 }
 
 afficherType(type)
@@ -201,11 +226,18 @@ const boutonMoins = card.querySelector(".moins")
 boutonMoins.onclick = (e)=>{
 e.stopPropagation()
 
-if(p.count > 0){
+if(p.isCustom && p.customList){
+p.customList.pop()
+p.count = p.customList.length
+}else if(p.isTKT && p.tktList){
+p.tktList.pop()
+p.count = p.tktList.length
+}else if(p.count > 0){
 p.count--
+}
+
 afficherType(type)
 majPointage()
-}
 }
 
 container.appendChild(card)
@@ -215,7 +247,7 @@ container.appendChild(card)
 }
 
 
-// TYPES
+// OUVERTURE TYPES
 
 function openFrais(){
 lastScreen = "selection"
@@ -254,7 +286,6 @@ lastScreen = "selection"
 document.getElementById("type-actif").innerText = "VV"
 document.getElementById("screen-selection").classList.remove("active")
 document.getElementById("screen-produits").classList.add("active")
-
 afficherType("vv")
 }
 
@@ -271,7 +302,6 @@ afficherType("depotes")
 
 function retour(){
 
-// depuis PRODUITS
 if(document.getElementById("screen-produits").classList.contains("active")){
 
 document.getElementById("screen-produits").classList.remove("active")
@@ -282,10 +312,7 @@ document.getElementById("screen-familles").classList.add("active")
 document.getElementById("screen-selection").classList.add("active")
 }
 
-}
-
-// depuis FAMILLES
-else if(document.getElementById("screen-familles").classList.contains("active")){
+}else if(document.getElementById("screen-familles").classList.contains("active")){
 
 document.getElementById("screen-familles").classList.remove("active")
 document.getElementById("screen-selection").classList.add("active")
@@ -295,16 +322,29 @@ document.getElementById("screen-selection").classList.add("active")
 }
 
 
-// EXPORT AVEC TOTAL PAR TYPE
+// EXPORT
 
 function terminerPointage(){
+
+let utilisateur = prompt("Qui fait le pointage ? (Nom ou initiales)")
+
+if(!utilisateur || utilisateur.trim() === ""){
+alert("Nom obligatoire pour valider le pointage")
+return
+}
+
+utilisateur = utilisateur.trim()
 
 const exportZone = document.getElementById("export-zone")
 
 let contenu = `
 <div style="padding:20px; width:320px; font-family:sans-serif; background:white;">
-<h2 style="text-align:center;">MassPoint</h2>
-<div style="text-align:center; margin-bottom:10px;">${today}</div>
+<h2 style="text-align:center;">Pointage+</h2>
+<div style="text-align:center; margin-bottom:5px;">${today}</div>
+
+<div style="text-align:center; font-size:14px; margin-bottom:10px;">
+Pointé par : <strong>${utilisateur}</strong>
+</div>
 `
 
 let total = 0
@@ -315,8 +355,9 @@ typesOrdre.forEach(type => {
 
 const produitsType = produits.filter(p => 
 p.type === type && (
-p.count > 0 || 
-(p.isTKT && p.tktList && p.tktList.length > 0)
+p.count > 0 ||
+(p.isTKT && p.tktList && p.tktList.length > 0) ||
+(p.isCustom && p.customList && p.customList.length > 0)
 )
 )
 
@@ -328,6 +369,8 @@ produitsType.forEach(p=>{
 
 if(p.isTKT && p.tktList){
 totalType += p.tktList.length
+}else if(p.isCustom && p.customList){
+totalType += p.customList.length
 }else{
 totalType += p.count || 0
 }
@@ -335,39 +378,35 @@ totalType += p.count || 0
 })
 
 contenu += `
-<div style="
-margin-top:12px;
-font-weight:bold;
-border-top:2px solid black;
-padding-top:6px;
-font-size:16px;
-">
+<div style="margin-top:12px;font-weight:bold;border-top:2px solid black;padding-top:6px;font-size:16px;">
 ${type.toUpperCase()} (${totalType})
 </div>
 `
 
 produitsType.forEach(p => {
 
-total += p.count
+let valeur = p.count
+
+if(p.isTKT && p.tktList){
+valeur = p.tktList.length
+}else if(p.isCustom && p.customList){
+valeur = p.customList.length
+}
+
+total += valeur
 
 contenu += `
-<div style="
-display:grid;
-grid-template-columns: 80px 1fr 40px;
-margin-bottom:5px;
-border-bottom:1px dashed #ccc;
-padding-bottom:3px;
-font-size:14px;
-align-items:center;
-">
+<div style="display:grid;grid-template-columns:80px 1fr 40px;margin-bottom:5px;border-bottom:1px dashed #ccc;padding-bottom:3px;font-size:14px;align-items:center;">
 <span>${p.code}</span>
 <span style="padding:0 8px;">
 ${p.nom}
 ${p.isTKT && p.tktList ? "<br>" + p.tktList.join(", ") : ""}
+${p.isCustom && p.customList ? "<br>" + p.customList.join("<br>") : ""}
 </span>
-<span style="text-align:right;">${p.count}</span>
+<span style="text-align:right;">${valeur}</span>
 </div>
 `
+
 })
 
 }
@@ -406,6 +445,8 @@ function retourMenu(){
 
 produits.forEach(p=>{
 p.count = 0
+p.tktList = []
+p.customList = []
 })
 
 majPointage()
