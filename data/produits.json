@@ -10,6 +10,7 @@
   { "code": "877", "nom": "Eau Pétillante Lidl", "famille": "eau", "type": "masses" },
   { "code": "109175", "nom": "Eau aromatisé Lidl", "famille": "eau", "type": "masses" },
   { "code": "130200", "nom": "Eau Pétillante Aromatisé", "famille": "eau", "type": "masses" },
+  { "code": "", "nom": "Eau Saguaro 50cL x12", "famille": "eau", "type": "masses" },
 
   { "code": "4047", "nom": "Nectar Orange", "famille": "jus", "type": "masses" },
   { "code": "4039", "nom": "Jus Multifruit", "famille": "jus", "type": "masses" },
@@ -82,6 +83,8 @@
   { "code": "Action", "nom": "EUR", "famille": "palette", "type": "action" },
   { "code": "Action", "nom": "DD", "famille": "palette", "type": "action" },
   { "code": "Action", "nom": "box", "famille": "palette", "type": "action", "isCustom": true },
+  { "code": "NF", "nom": "EUR", "famille": "palette", "type": "action" },
+  { "code": "NF", "nom": "DD", "famille": "palette", "type": "action" },
 
   { "code": "FL", "nom": "EUR", "famille": "palette", "type": "fl" },
   { "code": "FL", "nom": "DD", "famille": "palette", "type": "fl" },
@@ -109,6 +112,9 @@
   { "code": "2206", "nom": "Brioche tranchée", "famille": "depotes", "type": "depotes" },
   { "code": "153686", "nom": "Croissants", "famille": "depotes", "type": "depotes" },
   { "code": "5613478", "nom": "Briochette ronde", "famille": "depotes", "type": "depotes" },
-  { "code": "1983", "nom": "1/2 baguette précuite", "famille": "depotes", "type": "depotes" }
+  { "code": "1983", "nom": "1/2 baguette précuite", "famille": "depotes", "type": "depotes" },
+  { "code": "", "nom": "oeufs x10 sol", "famille": "depotes", "type": "depotes" },
+  { "code": "", "nom": "oeufs x10 bio", "famille": "depotes", "type": "depotes" },
+  { "code": "", "nom": "oeufs x6 label rouge", "famille": "depotes", "type": "depotes" }
 
 ]
