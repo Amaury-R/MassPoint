@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html lang="fr">
 
+<!-- ===================================================== -->
+<!-- 🧠 1. HEAD -->
+<!-- ===================================================== -->
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Pointage+</title>
 
@@ -12,91 +19,188 @@
 
 </head>
 
+
+<!-- ===================================================== -->
+<!-- 🚀 2. BODY -->
+<!-- ===================================================== -->
+
 <body>
 
+
+<!-- ===================================================== -->
+<!-- 📌 3. HEADER -->
+<!-- ===================================================== -->
+
 <header>
+
 <div>Pointage+</div>
 <div id="date"></div>
+
 </header>
 
 
-<!-- SCREEN 1 -->
+<!-- ===================================================== -->
+<!-- 🏠 4. SCREEN HOME -->
+<!-- ===================================================== -->
+
 <div id="screen-home" class="screen active">
 
-<button class="big-button" onclick="openSelection()">NOUVEAU POINTAGE</button>
+<button class="big-button"
+onclick="openSelection()">
 
-<button class="big-button disabled">HISTORIQUE</button>
+NOUVEAU POINTAGE
 
-<button class="big-button disabled">BASE DE DONNÉES</button>
+</button>
+
+<button class="big-button disabled">
+HISTORIQUE
+</button>
+
+<button class="big-button disabled">
+BASE DE DONNÉES
+</button>
 
 </div>
 
 
+<!-- ===================================================== -->
+<!-- 📂 5. SCREEN SELECTION -->
+<!-- ===================================================== -->
 
-<!-- SCREEN 2 -->
 <div id="screen-selection" class="screen">
 
 <div class="grid">
 
-<div class="tile active" onclick="openMasses()">MASSES</div>
-<div class="tile active" onclick="openDepotes()">DEPOTES</div>
-<div class="tile active" onclick="openFL()">FL / FLEURS</div>
+<div class="tile active" onclick="openMasses()">
+MASSES
+</div>
 
-<div class="tile active" onclick="openAction()">ACTION</div>
-<div class="tile active" onclick="openVV()">VV</div>
+<div class="tile active" onclick="openDepotes()">
+DEPOTES
+</div>
 
-<div class="tile active" onclick="openFrais()">FRAIS</div>
-<div class="tile active" onclick="openDetails()">DETAILS</div>
+<div class="tile active" onclick="openFL()">
+FL / FLEURS
+</div>
 
+<div class="tile active" onclick="openAction()">
+ACTION
+</div>
+
+<div class="tile active" onclick="openVV()">
+VV
+</div>
+
+<div class="tile active" onclick="openFrais()">
+FRAIS
+</div>
+
+<div class="tile active" onclick="openDetails()">
+DETAILS
 </div>
 
 </div>
 
-<!-- SCREEN 3 : FAMILLES -->
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 🏷️ 6. SCREEN FAMILLES -->
+<!-- ===================================================== -->
 
 <div id="screen-familles" class="screen">
 
 <div class="topbar">
-<button onclick="retour()">← MENU</button>
+
+<button onclick="retour()">
+← MENU
+</button>
+
 <span>FAMILLES</span>
+
 </div>
 
 <div class="grid">
 
-<div class="tile active" onclick="openFamille('eau')">EAU</div>
-<div class="tile active" onclick="openFamille('jus')">JUS</div>
-<div class="tile active" onclick="openFamille('soda')">SODA</div>
+<div class="tile active" onclick="openFamille('eau')">
+EAU
+</div>
 
-<div class="tile active" onclick="openFamille('oeufs')">OEUFS</div>
-<div class="tile active" onclick="openFamille('dph')">DPH</div>
-<div class="tile active" onclick="openFamille('pq')">PQ</div>
+<div class="tile active" onclick="openFamille('jus')">
+JUS
+</div>
 
-<div class="tile active" onclick="openFamille('lait')">LAIT</div>
-<div class="tile active" onclick="openFamille('huile / sucre / farine')">HUILE / SUCRE / FARINE</div>
-<div class="tile active" onclick="openFamille('biere')">BIERE</div>
+<div class="tile active" onclick="openFamille('soda')">
+SODA
+</div>
 
+<div class="tile active" onclick="openFamille('oeufs')">
+OEUFS
+</div>
+
+<div class="tile active" onclick="openFamille('dph')">
+DPH
+</div>
+
+<div class="tile active" onclick="openFamille('pq')">
+PQ
+</div>
+
+<div class="tile active" onclick="openFamille('lait')">
+LAIT
+</div>
+
+<div class="tile active"
+onclick="openFamille('huile / sucre / farine')">
+
+HUILE / SUCRE / FARINE
+
+</div>
+
+<div class="tile active" onclick="openFamille('biere')">
+BIERE
 </div>
 
 </div>
 
+</div>
 
 
-<!-- SCREEN 4 -->
+<!-- ===================================================== -->
+<!-- 📦 7. SCREEN PRODUITS -->
+<!-- ===================================================== -->
+
 <div id="screen-produits" class="screen">
 
 <div class="topbar">
-<button onclick="retour()">← MENU</button>
+
+<button onclick="retour()">
+← MENU
+</button>
+
 <span id="type-actif">EAU</span>
-</div>
-
-<div id="liste-produits" class="grid-produits"></div>
 
 </div>
+
+<div id="liste-produits"
+class="grid-produits">
+
+</div>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 🧾 8. PANNEAU POINTAGE -->
+<!-- ===================================================== -->
 
 <div class="pointage">
 
-<div class="pointage-title" onclick="togglePointage()">
+<div class="pointage-title"
+onclick="togglePointage()">
+
 Pointage en cours
+
 </div>
 
 <span>POINTAGE</span>
@@ -108,17 +212,23 @@ Pointage en cours
 <div id="liste-pointage"></div>
 
 <div class="total">
-TOTAL PALETTES : <span id="total">0</span>
+
+TOTAL PALETTES :
+<span id="total">0</span>
+
 </div>
 
-<button class="finish" onclick="terminerPointage()">
+<button class="finish"
+onclick="terminerPointage()">
+
 POINTAGE TERMINÉ
+
 </button>
 
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-<script src="app.js"></script>
+<!-- ===================================================== -->
+<!-- 🖼️ 9. SCREEN RÉSULTAT -->
+<!-- ===================================================== -->
 
 <div id="screen-resultat" class="screen">
 
@@ -129,14 +239,34 @@ POINTAGE TERMINÉ
 <img id="image-resultat">
 
 <button onclick="retourMenu()" class="finish">
+
 Retour menu
+
 </button>
 
 </div>
 
 </div>
 
-<div id="export-zone" style="position:absolute; left:-9999px; top:0;"></div>
+
+<!-- ===================================================== -->
+<!-- 📤 10. ZONE EXPORT -->
+<!-- ===================================================== -->
+
+<div id="export-zone"
+style="position:absolute; left:-9999px; top:0;">
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- 📚 11. SCRIPTS -->
+<!-- ===================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+<script src="app.js"></script>
+
 
 </body>
 </html>

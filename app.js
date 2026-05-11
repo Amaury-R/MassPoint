@@ -1,37 +1,55 @@
-// Data
+// =====================================================
+// 📦 1. DATA GLOBAL
+// =====================================================
+
 let produits = []
 let familleActive = ""
 let lastScreen = ""
 
-// date du jour
+
+// =====================================================
+// 📅 2. DATE DU JOUR
+// =====================================================
+
 const today = new Date().toLocaleDateString()
 
 document.getElementById("date").innerText = today
 document.getElementById("date-pointage").innerText = today
 
 
-// navigation
+// =====================================================
+// 🧭 3. NAVIGATION PRINCIPALE
+// =====================================================
 
 function openSelection(){
+
 document.getElementById("screen-home").classList.remove("active")
 document.getElementById("screen-selection").classList.add("active")
+
 }
 
 function openMasses(){
+
 lastScreen = "familles"
+
 document.getElementById("screen-selection").classList.remove("active")
 document.getElementById("screen-familles").classList.add("active")
+
 }
 
 
-// MASSES
+// =====================================================
+// 📦 4. AFFICHAGE PRODUITS MASSES
+// =====================================================
 
 function afficherProduits(){
 
 const container = document.getElementById("liste-produits")
 container.innerHTML = ""
 
-const produitsFamille = produits.filter(p => p.famille === familleActive && p.type === "masses")
+const produitsFamille = produits.filter(
+p => p.famille === familleActive && p.type === "masses"
+)
 
 produitsFamille.forEach(p=>{
 
@@ -49,20 +67,29 @@ card.innerHTML = `
 `
 
 card.onclick = ()=>{
+
 p.count++
+
 afficherProduits()
 majPointage()
+
 }
 
 const boutonMoins = card.querySelector(".moins")
 
 boutonMoins.onclick = (e)=>{
+
 e.stopPropagation()
+
 if(p.count > 0){
+
 p.count--
+
 afficherProduits()
 majPointage()
+
 }
+
 }
 
 container.appendChild(card)
@@ -72,11 +99,14 @@ container.appendChild(card)
 }
 
 
-// POINTAGE
+// =====================================================
+// 🧾 5. MISE À JOUR POINTAGE
+// =====================================================
 
 function majPointage(){
 
 let total = 0
+
 const liste = document.getElementById("liste-pointage")
 
 liste.innerHTML = ""
@@ -88,23 +118,37 @@ if(p.count > 0){
 let valeurAffichee = p.count
 
 if(p.isTKT && p.tktList){
+
 valeurAffichee = p.tktList.length
+
 }else if(p.isCustom && p.customList){
+
 valeurAffichee = p.customList.length
+
 }
 
+// ==========================
+// 📦 TOTAL PALETTES
+// ==========================
+
+if(p.type !== "depotes"){
+
 total += valeurAffichee
+
+}
 
 const ligne = document.createElement("div")
 ligne.className = "ligne-ticket"
 
 ligne.innerHTML = `
 <span class="ticket-code">${p.code}</span>
+
 <span class="ticket-nom">
 ${p.nom}
 ${p.isTKT && p.tktList ? "<br>" + p.tktList.join(", ") : ""}
 ${p.isCustom && p.customList ? "<br>" + p.customList.join("<br>") : ""}
 </span>
+
 <span class="ticket-count">${valeurAffichee}</span>
 `
 
@@ -119,7 +163,9 @@ document.getElementById("total").innerText = total
 }
 
 
-// FAMILLES
+// =====================================================
+// 🏷️ 6. GESTION DES FAMILLES
+// =====================================================
 
 function openFamille(famille){
 
@@ -136,7 +182,9 @@ afficherProduits()
 }
 
 
-// TYPES
+// =====================================================
+// 📋 7. AFFICHAGE PRODUITS PAR TYPE
+// =====================================================
 
 function afficherType(type){
 
@@ -153,9 +201,13 @@ card.className = "tuile-produit"
 let valeurAffichee = p.count
 
 if(p.isTKT && p.tktList){
+
 valeurAffichee = p.tktList.length
+
 }else if(p.isCustom && p.customList){
+
 valeurAffichee = p.customList.length
+
 }
 
 card.innerHTML = `
@@ -170,7 +222,10 @@ card.innerHTML = `
 
 card.onclick = ()=>{
 
-// BOX CUSTOM
+// ==========================
+// 📦 BOX CUSTOM
+// ==========================
+
 if(p.isCustom){
 
 let valeur = prompt("Qu'est-ce qui a été reçu ?")
@@ -191,7 +246,10 @@ p.count = p.customList.length
 
 }
 
-// TKT
+// ==========================
+// 🎫 TKT
+// ==========================
+
 }else if(p.isTKT){
 
 let numero = prompt("Numéro du TKT ?")
@@ -212,32 +270,46 @@ p.count = p.tktList.length
 
 }
 
-// NORMAL
+// ==========================
+// ➕ NORMAL
+// ==========================
+
 }else{
+
 p.count++
+
 }
 
 afficherType(type)
 majPointage()
+
 }
 
 const boutonMoins = card.querySelector(".moins")
 
 boutonMoins.onclick = (e)=>{
+
 e.stopPropagation()
 
 if(p.isCustom && p.customList){
+
 p.customList.pop()
 p.count = p.customList.length
+
 }else if(p.isTKT && p.tktList){
+
 p.tktList.pop()
 p.count = p.tktList.length
+
 }else if(p.count > 0){
+
 p.count--
+
 }
 
 afficherType(type)
 majPointage()
+
 }
 
 container.appendChild(card)
@@ -247,58 +319,92 @@ container.appendChild(card)
 }
 
 
-// OUVERTURE TYPES
+// =====================================================
+// 🚪 8. OUVERTURE DES TYPES
+// =====================================================
 
 function openFrais(){
+
 lastScreen = "selection"
+
 document.getElementById("type-actif").innerText = "FRAIS"
+
 document.getElementById("screen-selection").classList.remove("active")
 document.getElementById("screen-produits").classList.add("active")
+
 afficherType("frais")
+
 }
 
 function openDetails(){
+
 lastScreen = "selection"
+
 document.getElementById("type-actif").innerText = "DETAIL"
+
 document.getElementById("screen-selection").classList.remove("active")
 document.getElementById("screen-produits").classList.add("active")
+
 afficherType("detail")
+
 }
 
 function openFL(){
+
 lastScreen = "selection"
+
 document.getElementById("type-actif").innerText = "FL / FLEURS"
+
 document.getElementById("screen-selection").classList.remove("active")
 document.getElementById("screen-produits").classList.add("active")
+
 afficherType("fl")
+
 }
 
 function openAction(){
+
 lastScreen = "selection"
+
 document.getElementById("type-actif").innerText = "ACTION"
+
 document.getElementById("screen-selection").classList.remove("active")
 document.getElementById("screen-produits").classList.add("active")
+
 afficherType("action")
+
 }
 
 function openVV(){
+
 lastScreen = "selection"
+
 document.getElementById("type-actif").innerText = "VV"
+
 document.getElementById("screen-selection").classList.remove("active")
 document.getElementById("screen-produits").classList.add("active")
+
 afficherType("vv")
+
 }
 
 function openDepotes(){
+
 lastScreen = "selection"
+
 document.getElementById("type-actif").innerText = "DEPOTES"
+
 document.getElementById("screen-selection").classList.remove("active")
 document.getElementById("screen-produits").classList.add("active")
+
 afficherType("depotes")
+
 }
 
 
-// RETOUR
+// =====================================================
+// ⬅️ 9. RETOUR ÉCRANS
+// =====================================================
 
 function retour(){
 
@@ -307,9 +413,13 @@ if(document.getElementById("screen-produits").classList.contains("active")){
 document.getElementById("screen-produits").classList.remove("active")
 
 if(lastScreen === "familles"){
+
 document.getElementById("screen-familles").classList.add("active")
+
 }else{
+
 document.getElementById("screen-selection").classList.add("active")
+
 }
 
 }else if(document.getElementById("screen-familles").classList.contains("active")){
@@ -322,15 +432,19 @@ document.getElementById("screen-selection").classList.add("active")
 }
 
 
-// EXPORT
+// =====================================================
+// 🖼️ 10. EXPORT POINTAGE
+// =====================================================
 
 function terminerPointage(){
 
 let utilisateur = prompt("Qui fait le pointage ? (Nom ou initiales)")
 
 if(!utilisateur || utilisateur.trim() === ""){
+
 alert("Nom obligatoire pour valider le pointage")
 return
+
 }
 
 utilisateur = utilisateur.trim()
@@ -339,8 +453,12 @@ const exportZone = document.getElementById("export-zone")
 
 let contenu = `
 <div style="padding:20px; width:320px; font-family:sans-serif; background:white;">
+
 <h2 style="text-align:center;">Pointage+</h2>
-<div style="text-align:center; margin-bottom:5px;">${today}</div>
+
+<div style="text-align:center; margin-bottom:5px;">
+${today}
+</div>
 
 <div style="text-align:center; font-size:14px; margin-bottom:10px;">
 Pointé par : <strong>${utilisateur}</strong>
@@ -349,7 +467,15 @@ Pointé par : <strong>${utilisateur}</strong>
 
 let total = 0
 
-const typesOrdre = ["masses", "frais", "detail", "vv", "fl", "action", "depotes"]
+const typesOrdre = [
+"masses",
+"frais",
+"detail",
+"vv",
+"fl",
+"action",
+"depotes"
+]
 
 typesOrdre.forEach(type => {
 
@@ -368,11 +494,17 @@ let totalType = 0
 produitsType.forEach(p=>{
 
 if(p.isTKT && p.tktList){
+
 totalType += p.tktList.length
+
 }else if(p.isCustom && p.customList){
+
 totalType += p.customList.length
+
 }else{
+
 totalType += p.count || 0
+
 }
 
 })
@@ -388,22 +520,32 @@ produitsType.forEach(p => {
 let valeur = p.count
 
 if(p.isTKT && p.tktList){
+
 valeur = p.tktList.length
+
 }else if(p.isCustom && p.customList){
+
 valeur = p.customList.length
+
 }
 
+if(p.type !== "depotes"){
 total += valeur
+}
 
 contenu += `
 <div style="display:grid;grid-template-columns:80px 1fr 40px;margin-bottom:5px;border-bottom:1px dashed #ccc;padding-bottom:3px;font-size:14px;align-items:center;">
+
 <span>${p.code}</span>
+
 <span style="padding:0 8px;">
 ${p.nom}
 ${p.isTKT && p.tktList ? "<br>" + p.tktList.join(", ") : ""}
 ${p.isCustom && p.customList ? "<br>" + p.customList.join("<br>") : ""}
 </span>
+
 <span style="text-align:right;">${valeur}</span>
+
 </div>
 `
 
@@ -417,6 +559,7 @@ contenu += `
 <div style="margin-top:10px; font-weight:bold; text-align:right;">
 TOTAL : ${total}
 </div>
+
 </div>
 `
 
@@ -439,14 +582,26 @@ document.getElementById("screen-resultat").classList.add("active")
 }
 
 
-// RESET
+// =====================================================
+// 🔄 11. RESET APPLICATION
+// =====================================================
 
 function retourMenu(){
 
+const confirmation = confirm(
+"Êtes-vous sûr de vouloir revenir au menu ?\n\nPensez à enregistrer la photo du pointage avant de quitter."
+)
+
+if(!confirmation){
+return
+}
+
 produits.forEach(p=>{
+
 p.count = 0
 p.tktList = []
 p.customList = []
+
 })
 
 majPointage()
@@ -461,12 +616,16 @@ document.getElementById("screen-home").classList.add("active")
 }
 
 
-// LOAD JSON
+// =====================================================
+// 📥 12. CHARGEMENT JSON
+// =====================================================
 
 function chargerProduits(){
 
 fetch("data/produits.json")
+
 .then(response => response.json())
+
 .then(data => {
 
 produits = data
@@ -476,8 +635,11 @@ p.count = 0
 })
 
 })
+
 .catch(error=>{
+
 console.error(error)
+
 })
 
 }
