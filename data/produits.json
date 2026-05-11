@@ -31,6 +31,7 @@
   { "code": "209304", "nom": "Pepsi Max Bte", "famille": "soda", "type": "masses" },
   { "code": "197457", "nom": "Coca Cola sans sucre", "famille": "soda", "type": "masses" },
   { "code": "", "nom": "BAF Tropical", "famille": "soda", "type": "masses" },
+  { "code": "", "nom": "Coca zéro / Fanta Bte", "famille": "soda", "type": "masses" },
 
 
   { "code": "601", "nom": "Lait 1/2 brk", "famille": "lait", "type": "masses" },
