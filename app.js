@@ -431,6 +431,86 @@ document.getElementById("screen-selection").classList.add("active")
 
 }
 
+// =====================================================
+// 🕘 10. HISTORIQUE
+// =====================================================
+
+function openHistorique(){
+
+document.getElementById("screen-home").classList.remove("active")
+document.getElementById("screen-historique").classList.add("active")
+
+afficherHistorique()
+
+}
+
+function retourHistorique(){
+
+document.getElementById("screen-historique").classList.remove("active")
+document.getElementById("screen-home").classList.add("active")
+
+}
+
+function afficherHistorique(){
+
+const liste = document.getElementById("liste-historique")
+
+liste.innerHTML = ""
+
+const historique = JSON.parse(
+localStorage.getItem("historiquePointages")
+) || []
+
+if(historique.length === 0){
+
+liste.innerHTML = `
+<div style="padding:20px;text-align:center;">
+Aucun historique
+</div>
+`
+
+return
+
+}
+
+historique.reverse().forEach((pointage, index)=>{
+
+const ligne = document.createElement("div")
+
+ligne.className = "ligne-ticket"
+
+ligne.style.padding = "15px"
+ligne.style.cursor = "pointer"
+
+ligne.innerHTML = `
+<div style="font-weight:bold;">
+${pointage.date}
+</div>
+
+<div>
+${pointage.utilisateur}
+</div>
+`
+
+ligne.onclick = ()=>{
+
+document.getElementById("image-resultat").src =
+pointage.image
+
+document.querySelectorAll(".screen").forEach(s=>{
+s.classList.remove("active")
+})
+
+document.getElementById("screen-resultat")
+.classList.add("active")
+
+}
+
+liste.appendChild(ligne)
+
+})
+
+}
 
 // =====================================================
 // 🖼️ 10. EXPORT POINTAGE
@@ -570,6 +650,25 @@ html2canvas(exportZone).then(canvas => {
 const image = canvas.toDataURL("image/png")
 
 document.getElementById("image-resultat").src = image
+
+// ==========================
+// 💾 SAUVEGARDE HISTORIQUE
+// ==========================
+
+const historique = JSON.parse(
+localStorage.getItem("historiquePointages")
+) || []
+
+historique.push({
+date: today,
+utilisateur: utilisateur,
+image: image
+})
+
+localStorage.setItem(
+"historiquePointages",
+JSON.stringify(historique)
+)
 
 document.querySelectorAll(".screen").forEach(s=>{
 s.classList.remove("active")
